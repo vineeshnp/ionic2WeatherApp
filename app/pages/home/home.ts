@@ -17,6 +17,10 @@ export class HomePage {
 
     getWeather() {
       var url = 'http://api.openweathermap.org/data/2.5/weather?q='+this.city+'&APPID=0fd26da88d01aaf64ffb3785a4e80c8a';
+      /***
+      APPID is to be obtained by yourself from http://openweathermap.org/appid
+      The one we used it for test  purpose only
+      ***/
         var response = this.http.get(url)
           .map(res => res.json())
           .subscribe(data  => {
