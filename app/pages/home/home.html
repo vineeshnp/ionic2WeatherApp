@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar *navbar>
+    <ion-title>Simple Weather App</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="home" padding>
+
+    <ion-list >
+
+      <ion-item>
+        <ion-label floating>City</ion-label>
+        <ion-input type="text" [(ngModel)]='city' ></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <div padding>
+      <button primary block (click)="getWeather()">Get Climate</button>
+    </div>
+
+    <ion-card *ngIf='myWeather.temp'>
+      <ion-card-header>
+        Explore Nearby
+      </ion-card-header>
+
+      <ion-list>
+
+        <button ion-item>
+          <ion-icon name="map" item-left></ion-icon>
+          City : {{myWeather.city}}
+        </button>
+
+
+        <button ion-item>
+          <ion-icon name="thermometer" item-left></ion-icon>
+          Temp : {{myWeather.temp}}
+        </button>
+
+        <button ion-item>
+          <ion-icon name="rainy" item-left></ion-icon>
+          Humidity : {{myWeather.humidity}}
+        </button>
+
+        <button ion-item>
+          <ion-icon name="compass" item-left></ion-icon>
+          Pressure : {{myWeather.pressure}}
+        </button>
+      </ion-list>
+    </ion-card>
+
+</ion-content>
